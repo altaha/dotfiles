@@ -34,6 +34,9 @@ syntax enable
 set background=dark
 colorscheme molokai
 
+" Map shortcut (Ctrl+n) to toggle NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
