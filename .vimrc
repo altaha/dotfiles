@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'tmhedberg/SimpylFold'
 
 " All of your Plugins must be added before the following line
@@ -38,6 +39,12 @@ colorscheme molokai
 " Map shortcut to toggle NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
+" Make sure backspace key works on all text in insert mode
+set backspace=indent,eol,start
+
+" Show 4 lines before/after when scrolling offscreen
+set scrolloff=4
+
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
@@ -46,10 +53,10 @@ map <C-n> :NERDTreeToggle<CR>
 :set number
 :set relativenumber
 
+set autoindent
+
 set statusline=%<%f\ %h%m%r%=%-20.(line=%l,col=%c%V,totlin=%L%)\%h%m%r%=%-40(,bytval=0x%B,%n%Y%)\%P
 :set laststatus=2
-
-set autoindent
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
