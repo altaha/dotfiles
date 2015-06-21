@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ${0%/*}
 
 # Install Vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -7,6 +8,12 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir -p ~/.vim/colors
 wget https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 mv molokai.vim ~/.vim/colors
+
+# install CtrlP VIM plugin
+cd ~/.vim
+git clone git@github.com:kien/ctrlp.vim.git bundle/ctrlp.vim
+cd ${0%/*}
+
 
 #Install files
 SRC_FILE=.bash_profile
