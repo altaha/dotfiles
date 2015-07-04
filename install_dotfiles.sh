@@ -15,30 +15,32 @@ cd ~/.vim
 git clone git@github.com:kien/ctrlp.vim.git bundle/ctrlp.vim
 
 
-#Install files
+# Install files
+## File copying function
+copy_file(){
+    local SRC_FILE=$1
+    local DEST_FILE=$2
+
+    if [ -f $DEST_FILE ];
+    then
+       echo "File $DEST_FILE exists."
+    else
+      cp $SRC_FILE $DEST_FILE
+    fi
+}
+
 SRC_FILE=$CURDIR/.bash_profile
 DEST_FILE=~/.bash_profile
-if [ -f $DEST_FILE ];
-then
-   echo "File $DEST_FILE exists."
-else
-  cp $SRC_FILE $DEST_FILE
-fi
+copy_file $SRC_FILE $DEST_FILE
 
 SRC_FILE=$CURDIR/.vimrc
 DEST_FILE=~/.vimrc
-if [ -f $DEST_FILE ];
-then
-   echo "File $DEST_FILE exists."
-else
-  cp $SRC_FILE $DEST_FILE
-fi
+copy_file $SRC_FILE $DEST_FILE
 
 SRC_FILE=$CURDIR/.tmux.conf
 DEST_FILE=~/.tmux.conf
-if [ -f $DEST_FILE ];
-then
-   echo "File $DEST_FILE exists."
-else
-  cp $SRC_FILE $DEST_FILE
-fi
+copy_file $SRC_FILE $DEST_FILE
+
+SRC_FILE=$CURDIR/.gitconfig
+DEST_FILE=~/.gitconfig
+copy_file $SRC_FILE $DEST_FILE
