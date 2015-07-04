@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ${0%/*}
+CURDIR=$(pwd)
 
 # Install Vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -12,11 +13,10 @@ mv molokai.vim ~/.vim/colors
 # install CtrlP VIM plugin
 cd ~/.vim
 git clone git@github.com:kien/ctrlp.vim.git bundle/ctrlp.vim
-cd ${0%/*}
 
 
 #Install files
-SRC_FILE=.bash_profile
+SRC_FILE=$CURDIR/.bash_profile
 DEST_FILE=~/.bash_profile
 if [ -f $DEST_FILE ];
 then
@@ -25,7 +25,7 @@ else
   cp $SRC_FILE $DEST_FILE
 fi
 
-SRC_FILE=.vimrc
+SRC_FILE=$CURDIR/.vimrc
 DEST_FILE=~/.vimrc
 if [ -f $DEST_FILE ];
 then
@@ -34,7 +34,7 @@ else
   cp $SRC_FILE $DEST_FILE
 fi
 
-SRC_FILE=.tmux.conf
+SRC_FILE=$CURDIR/.tmux.conf
 DEST_FILE=~/.tmux.conf
 if [ -f $DEST_FILE ];
 then
