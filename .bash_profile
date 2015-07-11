@@ -1,4 +1,9 @@
-export TERM=xterm-256color
+# Set TERM (for outside and inside of tmux)
+if [[ -z $TMUX ]]; then
+    export TERM='xterm-256color'
+else
+    export TERM='screen-256color'
+fi
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
