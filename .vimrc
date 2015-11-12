@@ -39,6 +39,16 @@ colorscheme molokai
 " Map shortcut to toggle NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
+" Use ag for Ctrlp's indexing (http://blog.patspam.com/2014/super-fast-ctrlp)
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore "**/*.pyc"
+    \ -g ""'
+
+
 " Make sure backspace key works on all text in insert mode
 set backspace=indent,eol,start
 
