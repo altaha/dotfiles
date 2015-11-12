@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'nvie/vim-flake8'
 " Plugin 'tmhedberg/SimpylFold'
 
 " All of your Plugins must be added before the following line
@@ -79,3 +80,7 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 autocmd BufWritePre     *.rb :call TrimWhiteSpace()
+
+"""""""""" File specific linting, etc """""""""""
+" Auto use flake8 when saving python files
+autocmd BufWritePost *.py call Flake8()
