@@ -23,3 +23,8 @@ alias goh='cd /vagrant/workspace'
 
 alias gco='git checkout'
 alias gst='git status'
+alias thm='cd ~/projects/thm-dev/THM'
+
+agfp () {
+    ag $1 | fpp
+}
