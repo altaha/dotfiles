@@ -1,7 +1,8 @@
 ## This file list everything htat needs to be intalled (ideally would be automated as well)
 - vim (latest), with vundle
-- ag
-- flake8
+- brew
+- ag  ... brew install ag
+- flake8 ... pip install flake8
 -- requires pip
 
-- fpp (facebook file picker), optional
+- fpp (facebook file picker), optional... brew install fpp
