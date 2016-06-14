@@ -15,6 +15,10 @@ cd ~/.vim
 git clone git@github.com:kien/ctrlp.vim.git bundle/ctrlp.vim
 
 
+# Add hightlighting for Scala
+mkdir -p ~/.vim/{ftdetect,indent,syntax} && for d in ftdetect indent syntax ; do curl -o ~/.vim/$d/scala.vim https://raw.githubusercontent.com/derekwyatt/vim-scala/master/syntax/scala.vim; done
+
+
 # Install files
 ## File copying function
 copy_file(){
